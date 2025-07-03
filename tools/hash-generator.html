@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>謎の答えハッシュ生成ツール</title>
+    <style>
+        body {
+            font-family: 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+        
+        .generate-button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .generate-button:hover {
+            background: #2980b9;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .hash-output {
+            font-family: 'Courier New', monospace;
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 10px;
+            border-radius: 4px;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        
+        .copy-button {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        .copy-button:hover {
+            background: #229954;
+        }
+        
+        .info {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .normalized-answer {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>謎の答えハッシュ生成ツール</h1>
+        
+        <div class="info">
+            <strong>使い方:</strong><br>
+            1. 謎の正解を入力してください<br>
+            2. 「ハッシュ生成」ボタンをクリック<br>
+            3. 生成されたハッシュ値をriddle-answers.jsonにコピー<br><br>
+            <strong>注意:</strong> 入力された答えは自動的に正規化されます（ひらがな変換、小文字変換、空白除去）
+        </div>
+        
+        <div class="form-group">
+            <label for="answerInput">謎の答え:</label>
+            <input type="text" id="answerInput" placeholder="例: 太陽、hello、3時" autocomplete="off">
+        </div>
+        
+        <button class="generate-button" onclick="generateHash()">ハッシュ生成</button>
+        
+        <div id="result" class="result" style="display: none;">
+            <h3>生成結果</h3>
+            <div class="normalized-answer">
+                正規化された答え: <span id="normalizedAnswer"></span>
+            </div>
+            <div class="hash-output" id="hashOutput"></div>
+            <button class="copy-button" onclick="copyHash()">ハッシュをコピー</button>
+        </div>
+    </div>
+
+    <script>
+        // 回答の正規化（script.jsと同じ関数）
+        function normalizeAnswer(answer) {
+            return answer
+                .trim()
+                .toLowerCase()
+                .replace(/[ァ-ヶ]/g, (match) => String.fromCharCode(match.charCodeAt(0) - 0x60))
+                .replace(/\s+/g, '');
+        }
+
+        // SHA-256ハッシュの計算（script.jsと同じ関数）
+        async function calculateSHA256(text) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // ハッシュ生成
+        async function generateHash() {
+            const input = document.getElementById('answerInput');
+            const answer = input.value.trim();
+            
+            if (!answer) {
+                alert('答えを入力してください');
+                return;
+            }
+            
+            try {
+                const normalizedAnswer = normalizeAnswer(answer);
+                const hash = await calculateSHA256(normalizedAnswer);
+                
+                document.getElementById('normalizedAnswer').textContent = normalizedAnswer;
+                document.getElementById('hashOutput').textContent = hash;
+                document.getElementById('result').style.display = 'block';
+                
+            } catch (error) {
+                console.error('ハッシュ生成エラー:', error);
+                alert('ハッシュの生成に失敗しました');
+            }
+        }
+
+        // ハッシュをクリップボードにコピー
+        async function copyHash() {
+            const hashOutput = document.getElementById('hashOutput');
+            const hash = hashOutput.textContent;
+            
+            try {
+                await navigator.clipboard.writeText(hash);
+                alert('ハッシュをコピーしました！');
+            } catch (error) {
+                console.error('コピーエラー:', error);
+                // フォールバック: テキストを選択状態にする
+                const range = document.createRange();
+                range.selectNode(hashOutput);
+                window.getSelection().removeAllRanges();
+                window.getSelection().addRange(range);
+                alert('ハッシュを選択しました。Ctrl+C（Mac: Cmd+C）でコピーしてください');
+            }
+        }
+
+        // Enterキーでハッシュ生成
+        document.getElementById('answerInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                generateHash();
+            }
+        });
+    </script>
+</body>
+</html>

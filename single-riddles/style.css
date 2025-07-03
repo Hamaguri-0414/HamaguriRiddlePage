@@ -1,0 +1,484 @@
+/* 一枚謎専用CSS */
+
+/* ブレッドクラム */
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.breadcrumb a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+    color: #2980b9;
+}
+
+.separator {
+    color: #999;
+}
+
+.current {
+    color: #333;
+    font-weight: 500;
+}
+
+/* ページヘッダー */
+.page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.page-description {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* 謎一覧グリッド */
+.riddles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.riddle-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.riddle-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.riddle-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.riddle-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.riddle-card-date {
+    color: #888;
+}
+
+.riddle-difficulty {
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.difficulty-easy {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.difficulty-medium {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.difficulty-hard {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.riddle-card-description {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ページネーション */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+.pagination-button {
+    padding: 0.8rem 1.2rem;
+    border: 2px solid #3498db;
+    background: white;
+    color: #3498db;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.pagination-button:hover {
+    background: #3498db;
+    color: white;
+}
+
+.pagination-button.active {
+    background: #3498db;
+    color: white;
+}
+
+.pagination-button:disabled {
+    background: #f8f9fa;
+    border-color: #dee2e6;
+    color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* 詳細ページ */
+.back-link {
+    margin-bottom: 2rem;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover {
+    color: #2980b9;
+}
+
+.riddle-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.riddle-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.riddle-title {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.riddle-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.riddle-image-container {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.riddle-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.image-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    color: #666;
+}
+
+/* 回答セクション */
+.answer-section {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.answer-title {
+    font-size: 1.3rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.answer-input {
+    flex: 1;
+    padding: 1rem;
+    border: 2px solid #e1e8ed;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.answer-input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.submit-button {
+    padding: 1rem 2rem;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background: #2980b9;
+}
+
+.submit-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
+}
+
+.answer-feedback {
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    display: none;
+}
+
+.feedback-correct {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.feedback-incorrect {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* モーダル */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    padding: 2rem 2rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid #e1e8ed;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: #27ae60;
+    margin: 0;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.explanation {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+    color: #2c3e50;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #1da1f2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.share-button:hover {
+    background: #0d8bd9;
+}
+
+.close-modal-button {
+    padding: 0.8rem 1.5rem;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.close-modal-button:hover {
+    background: #5a6268;
+}
+
+/* ローディング */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem;
+    color: #666;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* エラーメッセージ */
+.error-message {
+    text-align: center;
+    padding: 3rem;
+    color: #721c24;
+    background: #f8d7da;
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.error-back-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .riddles-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .input-group {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .riddle-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        gap: 0.3rem;
+    }
+    
+    .pagination-button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .riddle-title {
+        font-size: 1.5rem;
+    }
+    
+    .riddle-card {
+        padding: 1rem;
+    }
+    
+    .answer-section {
+        padding: 1.5rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+    }
+    
+    .modal-header,
+    .modal-body {
+        padding: 1.5rem;
+    }
+}
