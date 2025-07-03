@@ -76,6 +76,12 @@ body {
     font-weight: bold;
 }
 
+.social-icon-img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
 /* メイン */
 .main {
     min-height: calc(100vh - 120px);
