@@ -56,6 +56,9 @@
                         <h3 class="answer-title">この謎の答えは？</h3>
                         <form class="answer-form" id="answerForm">
                             <div class="input-group">
+                                <button type="button" class="hint-button" id="hintButton" style="display: none;">
+                                    💡 ヒント
+                                </button>
                                 <input 
                                     type="text" 
                                     id="answerInput" 
@@ -85,6 +88,31 @@
             </div>
         </section>
     </main>
+
+    <!-- ヒントモーダル -->
+    <div class="modal" id="hintModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">💡 ヒント</h3>
+                <div class="hint-pagination" id="hintPagination">
+                    <span id="hintCounter">1/1</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="hint-content" id="hintContent">
+                    <!-- ヒント内容がここに表示されます -->
+                </div>
+                <div class="modal-actions">
+                    <button class="next-hint-button" id="nextHintButton">
+                        次のヒント →
+                    </button>
+                    <button class="close-modal-button" id="closeHintButton">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- 正解モーダル -->
     <div class="modal" id="correctModal" style="display: none;">
@@ -121,3 +149,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+
