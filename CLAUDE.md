@@ -28,7 +28,7 @@ This is the HamaguriRiddlePage project - a portfolio website for sharing riddles
 The website consists of:
 1. **TOP Page**: Main landing page that introduces and links to different riddle categories
 2. **子ページ (Child Pages)** for each riddle genre:
-   - **謎解きゲーム (Riddle Games)**: Introduces riddle games published on unityroom
+   - **謎解きゲーム (Riddle Games)**: Introduces riddle games published on unityroom (currently under development - showing placeholder page)
    - **一枚謎 (Single Image Riddles)**: Features single-image riddles with answer checking functionality
      - List view: Max 20 riddles per page with pagination
      - Detail view: Title, date, image, answer input, and share functionality
@@ -127,6 +127,25 @@ data/
 - Client-side pagination and riddle data loading
 - Modal system for correct answer feedback
 - Responsive image display and mobile-optimized input
+
+### 謎解きゲーム (Riddle Games) Page
+**Current Status: Placeholder Page**
+- Displays "under development" message with game development information
+- Shows planned features and unityroom publication plans
+- Includes breadcrumb navigation and back link to homepage
+- Ready for future expansion when games are completed
+
+**File Structure:**
+```
+games/
+└── index.html              # Placeholder page (inline CSS for simplicity)
+```
+
+**Future Implementation Plan:**
+- Game showcase grid with unityroom embeds
+- Game categories and difficulty filters
+- Individual game detail pages
+- Play statistics and user feedback system
 
 ## Current Status
 
