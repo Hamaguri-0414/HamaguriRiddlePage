@@ -270,12 +270,12 @@
 
 .answer-input:focus {
     outline: none;
-    border-color: #3498db;
+    border-color: #88DDAA;
 }
 
 .submit-button {
     padding: 1rem 2rem;
-    background: #3498db;
+    background: #88DDAA;
     color: white;
     border: none;
     border-radius: 8px;
@@ -285,7 +285,7 @@
 }
 
 .submit-button:hover {
-    background: #2980b9;
+    background: #66BB88;
 }
 
 .submit-button:disabled {

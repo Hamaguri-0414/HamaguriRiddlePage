@@ -260,7 +260,7 @@ function setupAnswerForm(riddleId) {
         } finally {
             // ボタンを有効化
             button.disabled = false;
-            button.textContent = '回答する';
+            button.textContent = '解答する';
         }
     });
 }
