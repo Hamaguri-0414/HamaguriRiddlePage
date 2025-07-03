@@ -201,19 +201,19 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #88DDAA;
+    color: #66BB88;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 25px;
-    border: 2px solid #88DDAA;
+    border: 2px solid #66BB88;
     margin-top: auto;
     align-self: center;
 }
 
 .category-link:hover {
-    background-color: #88DDAA;
+    background-color: #66BB88;
     color: white;
 }
 
