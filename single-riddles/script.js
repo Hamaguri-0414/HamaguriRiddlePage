@@ -439,7 +439,7 @@ function updateHintDisplay() {
     if (currentHintIndex <= 0) {
         prevButton.style.display = 'none';
     } else {
-        prevButton.style.display = 'block';
+        prevButton.style.display = 'flex';
         prevButton.textContent = `← 前のヒント (${currentHintIndex}/${currentRiddleHints.length})`;
     }
     
@@ -447,7 +447,7 @@ function updateHintDisplay() {
     if (currentHintIndex >= currentRiddleHints.length - 1) {
         nextButton.style.display = 'none';
     } else {
-        nextButton.style.display = 'block';
+        nextButton.style.display = 'flex';
         nextButton.textContent = `次のヒント (${currentHintIndex + 2}/${currentRiddleHints.length}) →`;
     }
 }
