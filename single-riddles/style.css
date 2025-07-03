@@ -393,7 +393,7 @@
 .share-button,
 .next-hint-button,
 .prev-hint-button {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 0.5rem;
     padding: 0.8rem 1.5rem;
@@ -404,6 +404,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    visibility: visible !important;
 }
 
 .share-button:hover,
@@ -527,9 +528,11 @@
     .next-hint-button,
     .prev-hint-button,
     .close-modal-button {
+        display: flex !important;
         width: 100%;
         justify-content: center;
         text-align: center;
+        visibility: visible !important;
     }
     
     .pagination {

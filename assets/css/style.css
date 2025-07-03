@@ -81,6 +81,23 @@ body {
     object-fit: contain;
 }
 
+/* ロゴリンクの装飾無効化 */
+.logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo a:hover {
+    color: #3498db;
+}
+
+.logo a:visited {
+    color: #2c3e50;
+}
+
 /* メイン */
 .main {
     min-height: calc(100vh - 120px);
