@@ -5,6 +5,8 @@ let riddlesData = null;
 let answersData = null;
 let currentPage = 1;
 const RIDDLES_PER_PAGE = 20;
+let currentHintIndex = 0;
+let currentRiddleHints = [];
 
 // ページ読み込み時の初期化
 document.addEventListener('DOMContentLoaded', function() {
@@ -221,6 +223,9 @@ function displayRiddle(riddleId) {
     
     img.src = `../assets/images/riddles/${riddle.image}`;
     img.alt = `${riddle.title}の謎画像`;
+    
+    // ヒント機能の初期化
+    initHintSystem(riddleId);
 }
 
 // 回答フォームの設定
@@ -354,6 +359,92 @@ function shareOnX(riddleId) {
     window.open(shareUrl, '_blank', 'width=550,height=420');
 }
 
+// ヒント機能の初期化
+function initHintSystem(riddleId) {
+    const answerData = answersData.answers[riddleId];
+    const hintButton = document.getElementById('hintButton');
+    
+    if (answerData && answerData.hints && answerData.hints.length > 0) {
+        currentRiddleHints = answerData.hints;
+        currentHintIndex = 0;
+        
+        // ヒントボタンを表示
+        hintButton.style.display = 'block';
+        
+        // ヒントボタンのイベントリスナー設定
+        hintButton.onclick = () => showHintModal();
+        
+        // ヒントモーダルのイベントリスナー設定
+        setupHintModalEvents();
+    } else {
+        // ヒントがない場合はボタンを非表示
+        hintButton.style.display = 'none';
+    }
+}
+
+// ヒントモーダルのイベント設定
+function setupHintModalEvents() {
+    const modal = document.getElementById('hintModal');
+    const closeButton = document.getElementById('closeHintButton');
+    const nextButton = document.getElementById('nextHintButton');
+    
+    // 閉じるボタンのイベント
+    closeButton.onclick = () => {
+        modal.style.display = 'none';
+    };
+    
+    // 次のヒントボタンのイベント
+    nextButton.onclick = () => {
+        showNextHint();
+    };
+    
+    // モーダル外クリックで閉じる
+    modal.onclick = (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
+// ヒントモーダルを表示
+function showHintModal() {
+    const modal = document.getElementById('hintModal');
+    
+    // 現在のヒントを表示
+    updateHintDisplay();
+    
+    modal.style.display = 'flex';
+}
+
+// ヒント表示の更新
+function updateHintDisplay() {
+    const hintContent = document.getElementById('hintContent');
+    const hintCounter = document.getElementById('hintCounter');
+    const nextButton = document.getElementById('nextHintButton');
+    
+    // 現在のヒントを表示
+    hintContent.textContent = currentRiddleHints[currentHintIndex];
+    
+    // ページネーション表示を更新
+    hintCounter.textContent = `${currentHintIndex + 1}/${currentRiddleHints.length}`;
+    
+    // 次のヒントボタンの状態を更新
+    if (currentHintIndex >= currentRiddleHints.length - 1) {
+        nextButton.style.display = 'none';
+    } else {
+        nextButton.style.display = 'block';
+        nextButton.textContent = `次のヒント (${currentHintIndex + 2}/${currentRiddleHints.length}) →`;
+    }
+}
+
+// 次のヒントを表示
+function showNextHint() {
+    if (currentHintIndex < currentRiddleHints.length - 1) {
+        currentHintIndex++;
+        updateHintDisplay();
+    }
+}
+
 // ユーティリティ関数
 function formatDate(dateString) {
     const date = new Date(dateString);
@@ -394,3 +485,4 @@ function showError() {
     if (loading) loading.style.display = 'none';
     if (error) error.style.display = 'block';
 }
+

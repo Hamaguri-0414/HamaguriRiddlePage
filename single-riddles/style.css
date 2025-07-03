@@ -240,6 +240,29 @@
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
+    align-items: center;
+}
+
+.hint-button {
+    padding: 1rem;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    font-size: 0.9rem;
+}
+
+.hint-button:hover {
+    background: #e67e22;
+}
+
+.hint-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
 }
 
 .answer-input {
@@ -323,6 +346,19 @@
     padding: 2rem 2rem 1rem;
     text-align: center;
     border-bottom: 1px solid #e1e8ed;
+    position: relative;
+}
+
+.hint-pagination {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    background: #ecf0f1;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 500;
 }
 
 .modal-title {
@@ -335,7 +371,8 @@
     padding: 2rem;
 }
 
-.explanation {
+.explanation,
+.hint-content {
     background: #f8f9fa;
     padding: 1.5rem;
     border-radius: 8px;
@@ -344,13 +381,23 @@
     color: #2c3e50;
 }
 
+.hint-content {
+    font-size: 1.1rem;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .modal-actions {
     display: flex;
     gap: 1rem;
     justify-content: center;
 }
 
-.share-button {
+.share-button,
+.next-hint-button {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -364,8 +411,22 @@
     transition: background-color 0.3s ease;
 }
 
-.share-button:hover {
+.share-button:hover,
+.next-hint-button:hover {
     background: #0d8bd9;
+}
+
+.next-hint-button {
+    background: #f39c12;
+}
+
+.next-hint-button:hover {
+    background: #e67e22;
+}
+
+.next-hint-button:disabled {
+    background: #bdc3c7;
+    cursor: not-allowed;
 }
 
 .close-modal-button {
@@ -437,6 +498,17 @@
         gap: 1rem;
     }
     
+    .hint-button {
+        order: -1;
+        align-self: flex-start;
+    }
+    
+    .hint-pagination {
+        position: static;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
     .riddle-meta {
         flex-direction: column;
         gap: 0.5rem;
@@ -482,3 +554,4 @@
         padding: 1.5rem;
     }
 }
+
