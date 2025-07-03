@@ -390,9 +390,8 @@
     justify-content: center;
 }
 
-.share-button,
-.next-hint-button,
-.prev-hint-button {
+/* Xシェアボタン */
+.share-button {
     display: flex !important;
     align-items: center;
     gap: 0.5rem;
@@ -407,15 +406,24 @@
     visibility: visible !important;
 }
 
-.share-button:hover,
-.next-hint-button:hover,
-.prev-hint-button:hover {
+.share-button:hover {
     background: #0d8bd9;
 }
 
+/* ヒントナビゲーションボタン */
 .next-hint-button,
 .prev-hint-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
     background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .next-hint-button:hover,
@@ -524,15 +532,25 @@
         align-items: center;
     }
     
-    .share-button,
-    .next-hint-button,
-    .prev-hint-button,
-    .close-modal-button {
+    .share-button {
         display: flex !important;
         width: 100%;
         justify-content: center;
         text-align: center;
         visibility: visible !important;
+    }
+    
+    .next-hint-button,
+    .prev-hint-button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .close-modal-button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
     }
     
     .pagination {
