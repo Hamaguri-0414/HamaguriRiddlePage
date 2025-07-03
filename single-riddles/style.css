@@ -386,7 +386,8 @@
 }
 
 .share-button,
-.next-hint-button {
+.next-hint-button,
+.prev-hint-button {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -401,19 +402,23 @@
 }
 
 .share-button:hover,
-.next-hint-button:hover {
+.next-hint-button:hover,
+.prev-hint-button:hover {
     background: #0d8bd9;
 }
 
-.next-hint-button {
+.next-hint-button,
+.prev-hint-button {
     background: #f39c12;
 }
 
-.next-hint-button:hover {
+.next-hint-button:hover,
+.prev-hint-button:hover {
     background: #e67e22;
 }
 
-.next-hint-button:disabled {
+.next-hint-button:disabled,
+.prev-hint-button:disabled {
     background: #bdc3c7;
     cursor: not-allowed;
 }
@@ -515,6 +520,7 @@
     
     .share-button,
     .next-hint-button,
+    .prev-hint-button,
     .close-modal-button {
         width: 100%;
         justify-content: center;

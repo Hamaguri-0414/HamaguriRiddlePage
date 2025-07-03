@@ -387,6 +387,7 @@ function setupHintModalEvents() {
     const modal = document.getElementById('hintModal');
     const closeButton = document.getElementById('closeHintButton');
     const nextButton = document.getElementById('nextHintButton');
+    const prevButton = document.getElementById('prevHintButton');
     
     // 閉じるボタンのイベント
     closeButton.onclick = () => {
@@ -396,6 +397,11 @@ function setupHintModalEvents() {
     // 次のヒントボタンのイベント
     nextButton.onclick = () => {
         showNextHint();
+    };
+    
+    // 前のヒントボタンのイベント
+    prevButton.onclick = () => {
+        showPrevHint();
     };
     
     // モーダル外クリックで閉じる
@@ -421,12 +427,21 @@ function updateHintDisplay() {
     const hintContent = document.getElementById('hintContent');
     const hintCounter = document.getElementById('hintCounter');
     const nextButton = document.getElementById('nextHintButton');
+    const prevButton = document.getElementById('prevHintButton');
     
     // 現在のヒントを表示
     hintContent.textContent = currentRiddleHints[currentHintIndex];
     
     // ページネーション表示を更新
     hintCounter.textContent = `${currentHintIndex + 1}/${currentRiddleHints.length}`;
+    
+    // 前のヒントボタンの状態を更新
+    if (currentHintIndex <= 0) {
+        prevButton.style.display = 'none';
+    } else {
+        prevButton.style.display = 'block';
+        prevButton.textContent = `← 前のヒント (${currentHintIndex}/${currentRiddleHints.length})`;
+    }
     
     // 次のヒントボタンの状態を更新
     if (currentHintIndex >= currentRiddleHints.length - 1) {
@@ -441,6 +456,14 @@ function updateHintDisplay() {
 function showNextHint() {
     if (currentHintIndex < currentRiddleHints.length - 1) {
         currentHintIndex++;
+        updateHintDisplay();
+    }
+}
+
+// 前のヒントを表示
+function showPrevHint() {
+    if (currentHintIndex > 0) {
+        currentHintIndex--;
         updateHintDisplay();
     }
 }
