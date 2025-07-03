@@ -38,16 +38,42 @@ body {
     padding: 1rem 0;
 }
 
-.logo a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2c3e50;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.nav-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.logo a:hover {
+.social-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+    border: 2px solid transparent;
+}
+
+.social-link:hover {
     color: #3498db;
+    background-color: #e3f2fd;
+    border-color: #3498db;
+    transform: scale(1.1);
+}
+
+.social-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 /* メイン */
@@ -121,6 +147,9 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .category-card:hover {
@@ -143,6 +172,7 @@ body {
     color: #666;
     margin-bottom: 1.5rem;
     line-height: 1.6;
+    flex-grow: 1;
 }
 
 .category-link {
@@ -156,6 +186,8 @@ body {
     padding: 0.5rem 1rem;
     border-radius: 25px;
     border: 2px solid #3498db;
+    margin-top: auto;
+    align-self: center;
 }
 
 .category-link:hover {
