@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HamaguriのLINE謎まとめ</title>
+    <meta name="description" content="HamaguriのLINE謎まとめです。謎を解いてください。">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* LINE謎専用スタイル */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #66BB88;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #4A9966;
+        }
+
+        .separator {
+            color: #999;
+        }
+
+        .current {
+            color: #333;
+            font-weight: 500;
+        }
+
+        .coming-soon-section {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #BBFFCC 0%, #88DDAA 100%);
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+
+        .coming-soon-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .coming-soon-icon {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .coming-soon-title {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .coming-soon-message {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            line-height: 1.8;
+        }
+
+        .coming-soon-details {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .coming-soon-icon {
+                font-size: 4rem;
+            }
+            
+            .coming-soon-title {
+                font-size: 2rem;
+            }
+            
+            .coming-soon-message {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .coming-soon-section {
+                padding: 4rem 0;
+            }
+            
+            .coming-soon-details {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="../">Hamaguriの謎解き保管庫</a>
+                </h1>
+                <nav class="breadcrumb">
+                    <a href="../">TOP</a>
+                    <span class="separator">></span>
+                    <span class="current">LINE謎</span>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+
+        <section class="coming-soon-section">
+            <div class="coming-soon-content">
+                <div class="coming-soon-icon">💬</div>
+                <h2 class="coming-soon-title">LINE謎</h2>
+                <div class="coming-soon-details">
+                    <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">開発予定</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">
+                        LINEを使った謎解きコンテンツを制作する気持ちがいつかは芽生えるかもしれません。<br>
+                        お楽しみに！
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                &copy; 2025 Hamaguri. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
