@@ -32,6 +32,7 @@
 .page-header {
     text-align: center;
     margin-bottom: 3rem;
+    margin-top: 2rem;
 }
 
 .page-title {
@@ -156,6 +157,9 @@
 }
 
 /* 詳細ページ */
+.riddle-detail {
+    padding-top: 2rem;
+}
 
 .riddle-content {
     max-width: 800px;
