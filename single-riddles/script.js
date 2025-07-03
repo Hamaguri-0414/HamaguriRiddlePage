@@ -199,7 +199,7 @@ function displayRiddle(riddleId) {
     }
     
     // ページタイトルの更新
-    document.getElementById('pageTitle').textContent = `${riddle.title} - Hamaguri謎解きポートフォリオ`;
+    document.getElementById('pageTitle').textContent = `${riddle.title} - Hamaguriの謎解き保管庫`;
     document.getElementById('breadcrumbTitle').textContent = riddle.title;
     
     // 謎情報の表示
