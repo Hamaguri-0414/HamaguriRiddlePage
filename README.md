@@ -9,7 +9,7 @@ https://hamaguri-0414.github.io/HamaguriRiddlePage/
 
 ### 📋 主な機能
 
-- **謎解きゲーム**: unityroomで公開予定のゲーム紹介
+- **Web謎**: Webブラウザで遊べる謎解きコンテンツ
 - **一枚謎**: 画像ベースの謎解きと答え合わせ機能
 - **ヒントシステム**: 段階的にヒントを表示する機能
 - **Xシェア機能**: 正解時のSNSシェア機能
@@ -19,7 +19,7 @@ https://hamaguri-0414.github.io/HamaguriRiddlePage/
 ```
 Hamaguriの謎解き保管庫/
 ├── TOPページ           # メインランディングページ
-├── 謎解きゲーム        # unityroomのゲーム紹介（仮ページ）
+├── Web謎              # Webブラウザで遊べる謎解き（開発予定）
 └── 一枚謎             # 画像謎の一覧・詳細ページ
     ├── 一覧ページ      # 最大20件/ページ表示
     └── 詳細ページ      # 個別謎の表示・答え合わせ
@@ -63,7 +63,7 @@ python -m SimpleHTTPServer 8000
 
 - **TOPページ**: http://localhost:8000/
 - **一枚謎一覧**: http://localhost:8000/single-riddles/
-- **謎解きゲーム**: http://localhost:8000/games/
+- **Web謎**: http://localhost:8000/web-riddles/
 - **ハッシュ生成ツール**: http://localhost:8000/tools/hash-generator.html
 
 ### ⚠️ 重要な注意事項
@@ -100,8 +100,8 @@ python -m SimpleHTTPServer 8000
 ```
 HamaguriRiddlePage/
 ├── index.html                  # TOPページ
-├── games/
-│   └── index.html             # 謎解きゲーム（仮ページ）
+├── web-riddles/
+│   └── index.html             # Web謎（開発予定ページ）
 ├── single-riddles/
 │   ├── index.html             # 一枚謎一覧
 │   ├── riddle.html            # 一枚謎詳細
@@ -139,7 +139,7 @@ HamaguriRiddlePage/
 
 ## 🔗 関連リンク
 
-- **unityroom**: （ゲーム公開後にリンク追加予定）
+- **Web謎**: （コンテンツ公開後にリンク追加予定）
 - **X (Twitter)**: 正解時のシェア機能で `#はまぐり謎` ハッシュタグを使用
 
 ---
