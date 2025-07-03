@@ -156,23 +156,6 @@
 }
 
 /* 詳細ページ */
-.back-link {
-    margin-bottom: 2rem;
-}
-
-.back-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.back-button:hover {
-    color: #2980b9;
-}
 
 .riddle-content {
     max-width: 800px;
@@ -484,13 +467,6 @@
     margin: 2rem 0;
 }
 
-.error-back-link {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: 500;
-}
 
 /* レスポンシブデザイン */
 @media (max-width: 768px) {
