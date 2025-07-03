@@ -1,0 +1,15 @@
+{
+  "riddles": [
+    {
+      "id": "riddle-001",
+      "title": "テストの小謎",
+      "date": "2025-07-04",
+      "image": "riddle-001.jpg",
+      "difficulty": "easy",
+      "tags": ["テスト", "クソ謎"],
+      "description": "これはテストのために作成した一枚謎です。"
+    }
+  ],
+  "totalCount": 1,
+  "pageSize": 20
+}

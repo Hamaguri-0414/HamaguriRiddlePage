@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">謎詳細 - Hamaguri謎解きポートフォリオ</title>
+    <meta name="description" content="一枚謎の詳細ページです。画像を見て答えを考えてみてください。">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="../">Hamaguri謎解き</a>
+                </h1>
+                <nav class="breadcrumb">
+                    <a href="../">TOP</a>
+                    <span class="separator">></span>
+                    <a href="./">一枚謎</a>
+                    <span class="separator">></span>
+                    <span class="current" id="breadcrumbTitle">謎詳細</span>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="riddle-detail">
+            <div class="container">
+                <div class="back-link">
+                    <a href="./" class="back-button">
+                        ← 一覧に戻る
+                    </a>
+                </div>
+
+                <article class="riddle-content" id="riddleContent">
+                    <header class="riddle-header">
+                        <h2 class="riddle-title" id="riddleTitle">謎を読み込み中...</h2>
+                        <div class="riddle-meta">
+                            <time class="riddle-date" id="riddleDate">--</time>
+                            <div class="riddle-difficulty" id="riddleDifficulty">--</div>
+                        </div>
+                    </header>
+
+                    <div class="riddle-image-container">
+                        <img id="riddleImage" class="riddle-image" src="" alt="謎の画像" style="display: none;">
+                        <div class="image-loading" id="imageLoading">
+                            <div class="loading-spinner"></div>
+                            <p>画像を読み込み中...</p>
+                        </div>
+                    </div>
+
+                    <div class="answer-section">
+                        <h3 class="answer-title">この謎の答えは？</h3>
+                        <form class="answer-form" id="answerForm">
+                            <div class="input-group">
+                                <input 
+                                    type="text" 
+                                    id="answerInput" 
+                                    class="answer-input" 
+                                    placeholder="答えを入力してください..."
+                                    autocomplete="off"
+                                    required
+                                >
+                                <button type="submit" class="submit-button" id="submitButton">
+                                    回答する
+                                </button>
+                            </div>
+                            <div class="answer-feedback" id="answerFeedback"></div>
+                        </form>
+                    </div>
+                </article>
+
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>謎を読み込み中...</p>
+                </div>
+
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <p>謎の読み込みに失敗しました。</p>
+                    <a href="./" class="error-back-link">一覧に戻る</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 正解モーダル -->
+    <div class="modal" id="correctModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">🎉 正解です！</h3>
+            </div>
+            <div class="modal-body">
+                <div class="explanation" id="explanation">
+                    <!-- 解説がここに表示されます -->
+                </div>
+                <div class="modal-actions">
+                    <button class="share-button" id="shareButton">
+                        <span class="share-icon">🐦</span>
+                        Xでシェアする
+                    </button>
+                    <button class="close-modal-button" id="closeModalButton">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                &copy; 2024 Hamaguri. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
