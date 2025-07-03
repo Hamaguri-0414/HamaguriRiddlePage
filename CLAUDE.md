@@ -88,6 +88,13 @@ HamaguriRiddlePage/
 
 The repository is currently empty except for Claude Code configuration files. No build system, dependencies, or code structure has been established yet.
 
+## Development Conventions
+
+### Code Style Requirements
+- **File endings**: Always ensure all source code files end with a newline character
+- **Indentation**: Use consistent indentation (spaces preferred)
+- **Encoding**: Use UTF-8 encoding for all text files
+
 ## Notes for Future Development
 
 When code is added to this repository, update this file with:
