@@ -56,9 +56,6 @@
                         <h3 class="answer-title">この謎の答えは？</h3>
                         <form class="answer-form" id="answerForm">
                             <div class="input-group">
-                                <button type="button" class="hint-button" id="hintButton" style="display: none;">
-                                    💡 ヒント
-                                </button>
                                 <input 
                                     type="text" 
                                     id="answerInput" 
@@ -67,9 +64,14 @@
                                     autocomplete="off"
                                     required
                                 >
-                                <button type="submit" class="submit-button" id="submitButton">
-                                    回答する
-                                </button>
+                                <div class="button-group">
+                                    <button type="button" class="hint-button" id="hintButton" style="display: none;">
+                                        💡 ヒント
+                                    </button>
+                                    <button type="submit" class="submit-button" id="submitButton">
+                                        回答する
+                                    </button>
+                                </div>
                             </div>
                             <div class="answer-feedback" id="answerFeedback"></div>
                         </form>

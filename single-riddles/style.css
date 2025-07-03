@@ -243,6 +243,12 @@
     align-items: center;
 }
 
+.button-group {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
 .hint-button {
     padding: 1rem;
     background: #f39c12;
@@ -496,11 +502,23 @@
     .input-group {
         flex-direction: column;
         gap: 1rem;
+        align-items: stretch;
     }
     
-    .hint-button {
-        order: -1;
-        align-self: flex-start;
+    .answer-input {
+        width: 100%;
+    }
+    
+    .button-group {
+        display: flex;
+        gap: 1rem;
+        width: 100%;
+    }
+    
+    .hint-button,
+    .submit-button {
+        flex: 1;
+        min-height: 48px;
     }
     
     .hint-pagination {
@@ -516,6 +534,15 @@
     
     .modal-actions {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    .share-button,
+    .next-hint-button,
+    .close-modal-button {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
     }
     
     .pagination {
