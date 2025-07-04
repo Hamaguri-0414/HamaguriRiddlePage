@@ -1,86 +1,13 @@
-// cluster謎データ（サンプル）
+// cluster謎データ
 const clusterRiddles = [
     {
         id: 1,
-        title: "第1回 cluster謎解きイベント",
-        date: "2024年01月15日",
-        image: "../assets/images/cluster-riddles/event1.jpg",
-        description: "初回のcluster謎解きイベント。メタバース空間での新しい謎解き体験を提供しました。",
-        details: "メタバース空間clusterで初めて開催された謎解きイベントです。参加者の皆さんと一緒にバーチャル空間を探索しながら、様々な謎を解きました。新しい形の謎解き体験として、多くの方にご参加いただきました。",
-        links: [
-            {
-                text: "イベント詳細を見る",
-                url: "https://cluster.mu/e/example1"
-            }
-        ]
-    },
-    {
-        id: 2,
-        title: "春の謎解きフェスティバル",
-        date: "2024年03月20日",
-        image: "../assets/images/cluster-riddles/event2.jpg",
-        description: "春をテーマにした謎解きイベント。桜舞う美しい空間で謎解きを楽しみました。",
-        details: "春の季節をテーマにした特別な謎解きイベントです。桜が舞い散る美しいバーチャル空間で、季節感あふれる謎解きを楽しんでいただきました。参加者同士の交流も活発で、素晴らしいイベントとなりました。",
-        links: [
-            {
-                text: "イベント詳細を見る",
-                url: "https://cluster.mu/e/example2"
-            },
-            {
-                text: "参加者の感想",
-                url: "https://example.com/reviews2"
-            }
-        ]
-    },
-    {
-        id: 3,
-        title: "夏祭り謎解き大会",
-        date: "2024年07月10日",
-        image: "../assets/images/cluster-riddles/event3.jpg",
-        description: "夏祭りの雰囲気の中で行われた大規模な謎解き大会。チーム戦で盛り上がりました。",
-        details: "夏祭りをテーマにした大規模な謎解き大会です。屋台や花火が彩るバーチャル会場で、チーム対抗の謎解きバトルを開催しました。参加者の皆さんの熱い戦いが繰り広げられ、非常に盛り上がったイベントでした。",
-        links: [
-            {
-                text: "イベント詳細を見る",
-                url: "https://cluster.mu/e/example3"
-            },
-            {
-                text: "結果発表",
-                url: "https://example.com/results3"
-            }
-        ]
-    },
-    {
-        id: 4,
-        title: "ハロウィン謎解きナイト",
-        date: "2024年10月31日",
-        image: "../assets/images/cluster-riddles/event4.jpg",
-        description: "ハロウィンの夜に開催されたホラー要素を含む謎解きイベント。",
-        details: "ハロウィンの夜に開催された特別な謎解きイベントです。少しホラー要素を含む謎解きで、スリルと楽しさを両立させました。仮装をした参加者も多く、ハロウィンらしい賑やかなイベントとなりました。",
-        links: [
-            {
-                text: "イベント詳細を見る",
-                url: "https://cluster.mu/e/example4"
-            }
-        ]
-    },
-    {
-        id: 5,
-        title: "クリスマス謎解きパーティー",
-        date: "2024年12月24日",
-        image: "../assets/images/cluster-riddles/event5.jpg",
-        description: "クリスマスイブに開催された特別な謎解きパーティー。プレゼント交換もありました。",
-        details: "クリスマスイブに開催された年末の特別イベントです。クリスマスツリーやイルミネーションで飾られた会場で、心温まる謎解きを楽しんでいただきました。参加者同士のプレゼント交換も行い、素敵なクリスマスを過ごしました。",
-        links: [
-            {
-                text: "イベント詳細を見る",
-                url: "https://cluster.mu/e/example5"
-            },
-            {
-                text: "写真ギャラリー",
-                url: "https://example.com/gallery5"
-            }
-        ]
+        title: "cluster死角謎",
+        date: "2025年05月15日",
+        image: "../assets/images/cluster/590fc9eb-6b4b-4755-9405-2d80836b4767.png",
+        description: "「cluster死角謎」公開しました。よろしくどうぞ。",
+        details: "「cluster死角謎」公開しました。よろしくどうぞ。",
+        links: []
     }
 ];
 
@@ -270,6 +197,9 @@ function openDetailModal(riddle) {
             linkElement.rel = 'noopener noreferrer';
             modalLinks.appendChild(linkElement);
         });
+    } else {
+        // リンクがない場合はリンクセクション全体を非表示
+        modalLinks.style.display = 'none';
     }
     
     detailModal.style.display = 'flex';
