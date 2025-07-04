@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>なぞとき解かナイト - Hamaguriの謎解き保管庫</title>
+    <meta name="description" content="なぞとき解かナイトの紹介ページです。過去の開催情報や画像をご覧ください。">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        /* なぞとき解かナイト専用スタイル */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .breadcrumb a {
+            color: #66BB88;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: #4A9966;
+        }
+
+        .separator {
+            color: #999;
+        }
+
+        .current {
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* ヒーローセクション */
+        .tokanight-hero {
+            background: linear-gradient(135deg, #BBFFCC 0%, #88DDAA 100%);
+            color: #2c3e50;
+            padding: 4rem 0;
+            margin-bottom: 4rem;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-thumbnail {
+            text-align: center;
+        }
+
+        .hero-thumbnail img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* 画像ギャラリー */
+        .gallery-section {
+            padding: 4rem 0;
+            background: white;
+        }
+
+        .gallery-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: #88DDAA;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .gallery-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .gallery-scroll {
+            display: flex;
+            gap: 2rem;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: #88DDAA #f0f0f0;
+        }
+
+        .gallery-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+
+        .gallery-scroll::-webkit-scrollbar-thumb {
+            background: #88DDAA;
+            border-radius: 4px;
+        }
+
+        .gallery-item {
+            flex: none;
+            width: 300px;
+            text-align: center;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item h3 {
+            margin-top: 1rem;
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        /* リンクセクション */
+        .links-section {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .links-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .links-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            color: #555;
+        }
+
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            background: #66BB88;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .external-link:hover {
+            background: #4A9966;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 187, 136, 0.3);
+        }
+
+        .external-icon {
+            font-size: 1.2rem;
+        }
+
+        /* レスポンシブデザイン */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-text p {
+                font-size: 1rem;
+            }
+
+            .gallery-item {
+                width: 250px;
+            }
+
+            .gallery-item img {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tokanight-hero {
+                padding: 3rem 0;
+            }
+
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .gallery-item {
+                width: 200px;
+            }
+
+            .gallery-item img {
+                height: 130px;
+            }
+
+            .external-link {
+                padding: 0.8rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="../">Hamaguriの謎解き保管庫</a>
+                </h1>
+                <nav class="breadcrumb">
+                    <a href="../">TOP</a>
+                    <span class="separator">></span>
+                    <span class="current">なぞとき解かナイト</span>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- ヒーローセクション -->
+        <section class="tokanight-hero">
+            <div class="hero-content">
+                <div class="hero-thumbnail">
+                    <img src="../assets/images/nazotoki-tokanight/thumbnail.jpg" alt="なぞとき解かナイト サムネイル" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div style="display: none; width: 300px; height: 200px; background: #e0e0e0; border-radius: 12px; align-items: center; justify-content: center; color: #999; font-size: 1rem;">
+                        サムネイル画像
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <h1>なぞとき解かナイト</h1>
+                    <p>
+                        毎月開催している謎解きイベント「なぞとき解かナイト」の紹介ページです。
+                        参加者の皆さんと一緒に様々な謎解きに挑戦し、楽しい時間を過ごしています。
+                        初心者からベテランまで、どなたでもお気軽にご参加いただけます。
+                    </p>
+                    <p>
+                        このイベントでは、オリジナルの謎解き問題を用意し、チーム戦や個人戦など
+                        様々な形式で謎解きを楽しんでいただいています。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 画像ギャラリー -->
+        <section class="gallery-section">
+            <div class="gallery-content">
+                <h2 class="section-title">イベントの様子</h2>
+                <div class="gallery-container">
+                    <div class="gallery-scroll">
+                        <div class="gallery-item">
+                            <img src="../assets/images/nazotoki-tokanight/event1.jpg" alt="イベント風景1" onerror="this.style.background='#e0e0e0';">
+                            <h3>第1回 解かナイト</h3>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/images/nazotoki-tokanight/event2.jpg" alt="イベント風景2" onerror="this.style.background='#e0e0e0';">
+                            <h3>第2回 解かナイト</h3>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="../assets/images/nazotoki-tokanight/event3.jpg" alt="イベント風景3" onerror="this.style.background='#e0e0e0';">
+                            <h3>第3回 解かナイト</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- リンクセクション -->
+        <section class="links-section">
+            <div class="links-content">
+                <h2 class="section-title">過去の開催情報</h2>
+                <p class="links-description">
+                    これまでに開催した「なぞとき解かナイト」の詳細情報や、
+                    参加者の感想、使用した問題などをまとめています。
+                    下記のリンクから過去のイベント情報をご覧ください。
+                </p>
+                <a href="#" class="external-link">
+                    <span class="external-icon">📝</span>
+                    過去の解かナイトまとめを見る
+                    <span class="external-icon">→</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                &copy; 2025 Hamaguri. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
