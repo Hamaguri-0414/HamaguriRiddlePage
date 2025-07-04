@@ -4,102 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HamaguriのLINE謎まとめ</title>
-    <meta name="description" content="HamaguriのLINE謎まとめです。謎を解いてください。">
+    <meta name="description" content="HamaguriのLINE謎まとめです。LINEを使用した謎解きコンテンツをまとめています。">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        /* LINE謎専用スタイル */
-        .breadcrumb {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .breadcrumb a {
-            color: #66BB88;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .breadcrumb a:hover {
-            color: #4A9966;
-        }
-
-        .separator {
-            color: #999;
-        }
-
-        .current {
-            color: #333;
-            font-weight: 500;
-        }
-
-        .coming-soon-section {
-            padding: 6rem 0;
-            text-align: center;
-            background: linear-gradient(135deg, #BBFFCC 0%, #88DDAA 100%);
-            color: #2c3e50;
-            margin-bottom: 3rem;
-        }
-
-        .coming-soon-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .coming-soon-icon {
-            font-size: 6rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .coming-soon-title {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: bold;
-        }
-
-        .coming-soon-message {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            line-height: 1.8;
-        }
-
-        .coming-soon-details {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            margin-top: 3rem;
-        }
-
-        /* レスポンシブデザイン */
-        @media (max-width: 768px) {
-            .coming-soon-icon {
-                font-size: 4rem;
-            }
-            
-            .coming-soon-title {
-                font-size: 2rem;
-            }
-            
-            .coming-soon-message {
-                font-size: 1.1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .coming-soon-section {
-                padding: 4rem 0;
-            }
-            
-            .coming-soon-details {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="header">
@@ -118,21 +25,55 @@
     </header>
 
     <main class="main">
-
-        <section class="coming-soon-section">
-            <div class="coming-soon-content">
-                <div class="coming-soon-icon">💬</div>
-                <h2 class="coming-soon-title">LINE謎</h2>
-                <div class="coming-soon-details">
-                    <h3 style="margin-bottom: 1rem; font-size: 1.5rem;">開発予定</h3>
-                    <p style="font-size: 1.1rem; line-height: 1.8;">
-                        LINEを使った謎解きコンテンツを制作する気持ちがいつかは芽生えるかもしれません。<br>
-                        お楽しみに！
+        <section class="line-riddles-list">
+            <div class="container">
+                <div class="page-header">
+                    <h2 class="page-title">LINE謎まとめ</h2>
+                    <p class="page-description">
+                        LINEを使用した謎解きコンテンツをまとめています。<br>
+                        カードをクリックすると詳細が表示されます。
                     </p>
+                </div>
+
+                <div class="line-riddles-grid" id="lineRiddlesGrid">
+                    <!-- JavaScript で動的に生成 -->
+                </div>
+
+                <div class="pagination" id="pagination">
+                    <!-- JavaScript で動的に生成 -->
+                </div>
+
+                <div class="loading" id="loading">
+                    <div class="loading-spinner"></div>
+                    <p>LINE謎を読み込み中...</p>
+                </div>
+
+                <div class="error-message" id="errorMessage" style="display: none;">
+                    <p>LINE謎の読み込みに失敗しました。しばらく後でもう一度お試しください。</p>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- 詳細ダイアログ -->
+    <div class="modal" id="detailModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <button class="close-button" id="closeModal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="riddle-details">
+                    <div class="riddle-date" id="modalDate"></div>
+                    <div class="riddle-description" id="modalDescription"></div>
+                    <div class="riddle-links" id="modalLinks"></div>
+                </div>
+                <div class="riddle-image-container">
+                    <img id="modalImage" class="riddle-image" alt="LINE謎画像">
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -143,5 +84,6 @@
     </footer>
 
     <script src="../assets/js/main.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
