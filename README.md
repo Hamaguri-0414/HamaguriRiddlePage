@@ -4,7 +4,7 @@ https://hamaguri-0414.github.io/HamaguriRiddlePage/
 
 ## 🎯 プロジェクト概要
 
-このサイトは、Hamaguriが制作した様々な謎解きコンテンツを紹介・提供するWebサイトです。GitHub Pagesでホスティングされており、静的サイトとして動作します。
+このサイトは、はまぐりが制作した様々な謎解きコンテンツを紹介・提供するWebサイトです。GitHub Pagesでホスティングされており、静的サイトとして動作します。
 また、READMEを含め多くの文章・ソースコードはClaude Codeが執筆しています。
 
 ### 📋 主な機能
@@ -17,7 +17,7 @@ https://hamaguri-0414.github.io/HamaguriRiddlePage/
 ## 🏗️ サイト構成
 
 ```
-Hamaguriの謎解き保管庫/
+はまぐりの謎解き保管庫/
 ├── TOPページ           # メインランディングページ
 ├── Web謎              # Webブラウザで遊べる謎解き（開発予定）
 └── 一枚謎             # 画像謎の一覧・詳細ページ
