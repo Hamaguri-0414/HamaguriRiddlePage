@@ -6,8 +6,9 @@ const lineRiddles = [
         date: "2025年06月08日",
         image: "../assets/images/LINE/seven-line-riddle.png",
         description: "身内向けの誕生日記念のライン謎です。",
-        details: "身内向けの誕生日記念のライン謎です。",
-        links: []
+        details: "身内向けの誕生日記念のライン謎です。小謎に出てきた法則に従ってLINE謎の招待リンクを変更すると真のライン謎に辿り着けるギミックがありました。",
+        links: [],
+        isPrivate: true
     }
 ];
 
@@ -186,6 +187,16 @@ function openDetailModal(riddle) {
     // リンクの表示
     const modalLinks = document.getElementById('modalLinks');
     modalLinks.innerHTML = '';
+    modalLinks.style.display = 'flex';
+    
+    // 非公開の謎の場合、非公開ボタンを表示
+    if (riddle.isPrivate) {
+        const privateButton = document.createElement('button');
+        privateButton.className = 'riddle-link riddle-link-private';
+        privateButton.textContent = 'この作品は非公開です';
+        privateButton.disabled = true;
+        modalLinks.appendChild(privateButton);
+    }
     
     if (riddle.links && riddle.links.length > 0) {
         riddle.links.forEach(link => {
@@ -197,8 +208,8 @@ function openDetailModal(riddle) {
             linkElement.rel = 'noopener noreferrer';
             modalLinks.appendChild(linkElement);
         });
-    } else {
-        // リンクがない場合はリンクセクション全体を非表示
+    } else if (!riddle.isPrivate) {
+        // リンクがなく、非公開でもない場合はリンクセクション全体を非表示
         modalLinks.style.display = 'none';
     }
     
