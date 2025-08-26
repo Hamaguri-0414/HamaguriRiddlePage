@@ -6,7 +6,7 @@ const portfolioWorks = [
         date: "2025年07月07日",
         image: "../assets/images/portfolio/10th-nazo.png",
         description: "クラスター株式会社の10周年を記念したメタバースプラットフォーム cluster 上で遊べる周遊型の謎解きです。",
-        details: "クラスター株式会社の10周年を記念したメタバースプラットフォーム cluster 上で遊べる周遊型の謎解きです。",
+        details: "クラスター株式会社の10周年を記念したメタバースプラットフォーム cluster 上で遊べる周遊型の謎解きです。2025年7月7日から同年8月8日まで開催されました。",
         links: [
             {
                 text: "詳細をみる",

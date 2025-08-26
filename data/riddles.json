@@ -8,8 +8,17 @@
       "difficulty": "easy",
       "tags": ["テスト", "クソ謎"],
       "description": "これはテストのために作成した一枚謎です。"
+    },
+    {
+      "id": "riddle-002",
+      "title": "クラスター社10周年謎解きラリーお試し謎",
+      "date": "2025-07-01",
+      "image": "riddle-002.jpg",
+      "difficulty": "hard",
+      "tags": ["お試し謎"],
+      "description": "クラスター社10周年謎解きラリーのお試し謎として制作した一枚謎です。"
     }
   ],
-  "totalCount": 1,
+  "totalCount": 2,
   "pageSize": 20
 }
