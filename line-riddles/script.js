@@ -9,6 +9,26 @@ const lineRiddles = [
         details: "身内向けの誕生日記念のライン謎です。小謎に出てきた法則に従ってLINE謎の招待リンクを変更すると真のライン謎に辿り着けるギミックがありました。",
         links: [],
         isPrivate: true
+    },
+    {
+        id: 2,
+        title: "誕生日一日目謎",
+        date: "2025年07月21日",
+        image: "../assets/images/LINE/just-birthday-riddle.png",
+        description: "身内向けの誕生日記念のライン謎です。",
+        details: "身内向けの誕生日記念のライン謎です。誕生日を祝われたメッセージが誕生日の翌日に送られてきたことから誕生日を一日勘違いされている可能性を考慮して小謎を解きなおすことで、誕生日二日目謎に辿り着けるギミックがありました。",
+        links: [],
+        isPrivate: true
+    },
+    {
+        id: 3,
+        title: "なのライン謎",
+        date: "2025年08月20日",
+        image: "../assets/images/LINE/nano-line-riddle.png",
+        description: "身内向けの誕生日記念のライン謎です。",
+        details: "身内向けの誕生日記念のライン謎です。フィッシュボーンに小謎の答えではなく、小謎がモチーフになっている公演に参加した日付を当てはめることでフィッシュボーンの答えが文章から電話番号に変化し、実際に電話をかけることでお祝いメッセージが再生されるギミックがありました。",
+        links: [],
+        isPrivate: true
     }
 ];
 
