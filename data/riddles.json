@@ -17,6 +17,15 @@
       "difficulty": "hard",
       "tags": ["お試し謎"],
       "description": "クラスター社10周年謎解きラリーのお試し謎として制作した一枚謎です。"
+    },
+    {
+      "id": "riddle-003",
+      "title": "適当謎1",
+      "date": "2025-09-07",
+      "image": "riddle-003.jpg",
+      "difficulty": "hard",
+      "tags": ["検索謎"],
+      "description": "必要に応じて検索してください。"
     }
   ],
   "totalCount": 2,
