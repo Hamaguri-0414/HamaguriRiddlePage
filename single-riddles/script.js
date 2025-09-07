@@ -278,7 +278,18 @@ async function checkAnswer(riddleId, answer) {
     // SHA-256ハッシュを計算
     const answerHash = await calculateSHA256(normalizedAnswer);
     
-    return answerHash === answerData.correctHash;
+    // correctHashが文字列の場合（旧形式：単一ハッシュ）
+    if (typeof answerData.correctHash === 'string') {
+        return answerHash === answerData.correctHash;
+    }
+    
+    // correctHashが配列の場合（新形式：複数ハッシュ）
+    if (Array.isArray(answerData.correctHash)) {
+        return answerData.correctHash.includes(answerHash);
+    }
+    
+    // どちらでもない場合はエラー
+    throw new Error('正解ハッシュの形式が不正です');
 }
 
 // 回答の正規化
