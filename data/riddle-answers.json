@@ -1,7 +1,7 @@
 {
   "answers": {
     "riddle-001": {
-      "correctHash": "e715ed6eb0c8a52d8d016a8cf7d33daa39c874b134e43e6c16237db3ac360e6a",
+      "correctHash": ["e715ed6eb0c8a52d8d016a8cf7d33daa39c874b134e43e6c16237db3ac360e6a"],
       "explanation": "テストの謎なので答えはテストです。",
       "hints": [
         "矢印の向きにしたがって移動し、その先にある1文字が丸と対応しています。",
@@ -9,7 +9,7 @@
       ]
     }, 
     "riddle-002": {
-      "correctHash": "f34e190a00f128e48466f4a1ba1d425cd08074ec61687e89e655c3019efa3983",
+      "correctHash": ["f34e190a00f128e48466f4a1ba1d425cd08074ec61687e89e655c3019efa3983", "1a96b6acadc2d0f9f26e90ad15307ac778853d82ba8ea40d733f19b746c65df9"],
       "explanation": "クラスター株式会社のミッションは「人類の創造力を加速する」です。この問題では、立方体を展開した様子を想像する力を加速していただきました。",
       "hints": [
         "それぞれの立方体に赤と青の3が共通して存在します。まずは展開した際にふたつの3がどこに配置されるか考えてみましょう。",
@@ -19,7 +19,7 @@
       ]
     },
     "riddle-003": {
-      "correctHash": "e28eae8a21c1682bc86dcf8d84db333e985fa31d38aabf5d0055eb288b86230e",
+      "correctHash": ["e28eae8a21c1682bc86dcf8d84db333e985fa31d38aabf5d0055eb288b86230e"],
       "explanation": "モールス信号の長さの分布がどうなっているのか気になったので研究ついでに作ってみました。",
       "hints": [
         "左の図は「くろねこ」を表しています。",
