@@ -190,40 +190,65 @@ function navigateToRiddle(riddleId) {
     window.location.href = `riddle.html?id=${riddleId}`;
 }
 
+// OGPメタタグの更新
+function updateOGPTags(riddle) {
+    const currentUrl = window.location.href;
+    const imageUrl = new URL(`../assets/images/riddles/${riddle.image}`, window.location.href).href;
+    const description = riddle.description;
+    const title = `${riddle.title} - Hamaguriの謎解き保管庫`;
+
+    // ページタイトルとdescription
+    document.getElementById('pageDescription').setAttribute('content', description);
+
+    // OGPタグ
+    document.getElementById('ogTitle').setAttribute('content', title);
+    document.getElementById('ogDescription').setAttribute('content', description);
+    document.getElementById('ogUrl').setAttribute('content', currentUrl);
+    document.getElementById('ogImage').setAttribute('content', imageUrl);
+
+    // Twitter Cardタグ
+    document.getElementById('twitterTitle').setAttribute('content', title);
+    document.getElementById('twitterDescription').setAttribute('content', description);
+    document.getElementById('twitterImage').setAttribute('content', imageUrl);
+}
+
 // 謎の表示（詳細ページ）
 function displayRiddle(riddleId) {
     const riddle = riddlesData.riddles.find(r => r.id === riddleId);
-    
+
     if (!riddle) {
         throw new Error('指定された謎が見つかりません');
     }
-    
+
     // ページタイトルの更新
     document.getElementById('pageTitle').textContent = `${riddle.title} - Hamaguriの謎解き保管庫`;
     document.getElementById('breadcrumbTitle').textContent = riddle.title;
-    
+
+    // OGPメタタグの更新
+    updateOGPTags(riddle);
+
     // 謎情報の表示
     document.getElementById('riddleTitle').textContent = riddle.title;
     document.getElementById('riddleDate').textContent = formatDate(riddle.date);
     document.getElementById('riddleDifficulty').textContent = getDifficultyText(riddle.difficulty);
     document.getElementById('riddleDifficulty').className = `riddle-difficulty difficulty-${riddle.difficulty}`;
-    
+
     // 画像の読み込み
     const img = document.getElementById('riddleImage');
     const imageLoading = document.getElementById('imageLoading');
-    
+
     img.onload = () => {
         imageLoading.style.display = 'none';
         img.style.display = 'block';
     };
-    
+
     img.onerror = () => {
         imageLoading.innerHTML = '<p>画像の読み込みに失敗しました</p>';
     };
-    
+
     img.src = `../assets/images/riddles/${riddle.image}`;
     img.alt = `${riddle.title}の謎画像`;
-    
+
     // ヒント機能の初期化
     initHintSystem(riddleId);
 }
