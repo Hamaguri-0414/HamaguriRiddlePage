@@ -187,7 +187,7 @@ function changePage(page) {
 
 // 謎詳細ページへの遷移
 function navigateToRiddle(riddleId) {
-    window.location.href = `riddle.html?id=${riddleId}`;
+    window.location.href = `${riddleId}.html`;
 }
 
 // OGPメタタグの更新

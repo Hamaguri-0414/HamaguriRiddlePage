@@ -108,25 +108,34 @@ HamaguriRiddlePage/
 ```
 single-riddles/
 ├── index.html              # List page
-├── riddle.html            # Detail page
-├── style.css              # Single riddles specific styles
-└── script.js              # Single riddles specific JavaScript
+├── riddle-001.html         # Individual riddle pages (generated)
+├── riddle-002.html
+├── riddle-XXX.html         # ...etc
+├── riddle-detail.js        # Detail page specific JavaScript
+├── style.css               # Single riddles specific styles
+└── script.js               # List page specific JavaScript
 
 data/
-├── riddles.json           # Riddle metadata
-└── riddle-answers.json    # Answer data (hashed)
+├── riddles.json            # Riddle metadata
+└── riddle-answers.json     # Answer data (hashed)
+
+tools/
+└── generate-riddle-pages.js # Script to generate individual HTML files
 ```
 
 **Data Structure:**
 - riddles.json: Contains riddle metadata (id, title, date, image, difficulty, tags)
 - riddle-answers.json: Contains hashed answers and explanations
-- URL structure: /single-riddles/?page=N for pagination, /single-riddles/riddle.html?id=riddle-XXX for details
+- URL structure:
+  - List: /single-riddles/?page=N
+  - Detail: /single-riddles/riddle-XXX.html (static HTML per riddle)
 
 **Technical Implementation:**
 - SHA-256 hash comparison for answer validation
 - Client-side pagination and riddle data loading
 - Modal system for correct answer feedback
 - Responsive image display and mobile-optimized input
+- **Static page generation**: Each riddle has its own HTML file with pre-rendered OGP tags for proper social media sharing on GitHub Pages
 
 ### 謎解きゲーム (Riddle Games) Page
 **Current Status: Placeholder Page**
@@ -186,6 +195,23 @@ open tools/hash-generator.html
 ```
 
 Use the hash generator tool to create SHA-256 hashes for new riddle answers. Input the correct answer and copy the generated hash to riddle-answers.json.
+
+### Riddle Page Generator
+```bash
+# Generate individual HTML files for each riddle
+node tools/generate-riddle-pages.js
+```
+
+**Important**: Run this command whenever you add new riddles to `data/riddles.json` or update existing riddle metadata. This script:
+- Reads riddles from `data/riddles.json`
+- Generates individual HTML files (e.g., `riddle-001.html`, `riddle-002.html`)
+- Pre-renders OGP meta tags with absolute URLs for social media sharing
+- Ensures proper display of riddle images when shared on X (Twitter), Facebook, etc.
+
+The generated HTML files include:
+- Static OGP tags (og:title, og:image, og:url) for crawler compatibility
+- Twitter Card meta tags for enhanced Twitter sharing
+- All riddle information pre-rendered (title, date, difficulty, image)
 
 ## Notes for Future Development
 

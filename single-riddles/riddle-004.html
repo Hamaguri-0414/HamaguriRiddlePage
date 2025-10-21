@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解かナイト23夜第8問 - Hamaguriの謎解き保管庫</title>
+
+    <!-- OGP Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="はまぐりの謎解き保管庫">
+    <meta property="og:title" content="解かナイト23夜第8問 - Hamaguriの謎解き保管庫">
+    <meta property="og:url" content="https://hamaguri-0414.github.io/HamaguriRiddlePage/single-riddles/riddle-004.html">
+    <meta property="og:image" content="https://hamaguri-0414.github.io/HamaguriRiddlePage/assets/images/riddles/riddle-004.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="解かナイト23夜第8問 - Hamaguriの謎解き保管庫">
+    <meta name="twitter:image" content="https://hamaguri-0414.github.io/HamaguriRiddlePage/assets/images/riddles/riddle-004.jpg">
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="container">
+                <h1 class="logo">
+                    <a href="../">はまぐりの謎解き保管庫</a>
+                </h1>
+                <nav class="breadcrumb">
+                    <a href="../">TOP</a>
+                    <span class="separator">></span>
+                    <a href="./">一枚謎</a>
+                    <span class="separator">></span>
+                    <span class="current">解かナイト23夜第8問</span>
+                </nav>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="riddle-detail">
+            <div class="container">
+
+                <article class="riddle-content" id="riddleContent">
+                    <header class="riddle-header">
+                        <h2 class="riddle-title">解かナイト23夜第8問</h2>
+                        <div class="riddle-meta">
+                            <time class="riddle-date">2025年10月20日</time>
+                            <div class="riddle-difficulty difficulty-medium">中級</div>
+                        </div>
+                    </header>
+
+                    <div class="riddle-image-container">
+                        <img class="riddle-image" src="../assets/images/riddles/riddle-004.jpg" alt="解かナイト23夜第8問の謎画像">
+                    </div>
+
+                    <div class="answer-section">
+                        <form class="answer-form" id="answerForm">
+                            <div class="input-group">
+                                <input
+                                    type="text"
+                                    id="answerInput"
+                                    class="answer-input"
+                                    placeholder="答えを入力してください..."
+                                    autocomplete="off"
+                                    required
+                                >
+                                <div class="button-group">
+                                    <button type="button" class="hint-button" id="hintButton" style="display: none;">
+                                        💡 ヒント
+                                    </button>
+                                    <button type="submit" class="submit-button" id="submitButton">
+                                        解答する
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="answer-feedback" id="answerFeedback"></div>
+                        </form>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- ヒントモーダル -->
+    <div class="modal" id="hintModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">💡 ヒント</h3>
+                <div class="hint-pagination" id="hintPagination">
+                    <span id="hintCounter">1/1</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="hint-content" id="hintContent">
+                    <!-- ヒント内容がここに表示されます -->
+                </div>
+                <div class="modal-actions">
+                    <button class="prev-hint-button" id="prevHintButton" style="display: none;">
+                        ← 前のヒント
+                    </button>
+                    <button class="next-hint-button" id="nextHintButton">
+                        次のヒント →
+                    </button>
+                    <button class="close-modal-button" id="closeHintButton">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 正解モーダル -->
+    <div class="modal" id="correctModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">🎉 正解です！</h3>
+            </div>
+            <div class="modal-body">
+                <div class="explanation" id="explanation">
+                    <!-- 解説がここに表示されます -->
+                </div>
+                <div class="modal-actions">
+                    <button class="share-button" id="shareButton">
+                        <span class="share-icon">🐦</span>
+                        Xでシェアする
+                    </button>
+                    <button class="close-modal-button" id="closeModalButton">
+                        閉じる
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="copyright">
+                &copy; 2025 Hamaguri. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script>
+        // 謎IDを設定
+        const RIDDLE_ID = 'riddle-004';
+    </script>
+    <script src="riddle-detail.js"></script>
+</body>
+</html>
