@@ -194,21 +194,15 @@ function navigateToRiddle(riddleId) {
 function updateOGPTags(riddle) {
     const currentUrl = window.location.href;
     const imageUrl = new URL(`../assets/images/riddles/${riddle.image}`, window.location.href).href;
-    const description = riddle.description;
     const title = `${riddle.title} - Hamaguriの謎解き保管庫`;
-
-    // ページタイトルとdescription
-    document.getElementById('pageDescription').setAttribute('content', description);
 
     // OGPタグ
     document.getElementById('ogTitle').setAttribute('content', title);
-    document.getElementById('ogDescription').setAttribute('content', description);
     document.getElementById('ogUrl').setAttribute('content', currentUrl);
     document.getElementById('ogImage').setAttribute('content', imageUrl);
 
     // Twitter Cardタグ
     document.getElementById('twitterTitle').setAttribute('content', title);
-    document.getElementById('twitterDescription').setAttribute('content', description);
     document.getElementById('twitterImage').setAttribute('content', imageUrl);
 }
 
